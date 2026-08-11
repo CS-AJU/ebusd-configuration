@@ -52,6 +52,7 @@ namespace Recov {
 
   /** Energy yield today */
   @inherit(r)
+  @poll(9)
   @ext(0x56, 0xe)
   model YieldToday {
     @unit("kWh")
@@ -178,10 +179,12 @@ namespace Recov {
   model MaxAirHumidity is Register<percent0>;
 
   /** Supply air speed */
+  @poll(3)
   @ext(1, 0xe)
   model SupplyAirSpeed is ReadonlyRegister<fanspeed>;
 
   /** Exhaust air speed */
+  @poll(3)
   @ext(0x2, 0xe)
   model ExhaustAirSpeed is ReadonlyRegister<fanspeed>;
 
@@ -195,6 +198,7 @@ namespace Recov {
   model SupplyFlowTarget is ReadonlyRegister<airflowrate>; //todo no measurement
 
   /** Exhaust air internal actual flow */
+  @poll(2)
   @ext(0x5, 0xe)
   model ExhaustFlowActual is ReadonlyRegister<airflowrate>;
 
@@ -204,6 +208,7 @@ namespace Recov {
 
   /** Ventilation stage */
   @inherit(r, w)
+  @poll(2)
   @ext(0x15, 0xe)
   model VentilationStage {
     @values(Values_VentilationStage)
@@ -211,35 +216,42 @@ namespace Recov {
   }
 
   /** desired temperature */
+  @poll(5)
   @ext(0x14, 0xe)
   model DesiredTemp is UpdateRegister<temp>;
 
   /** Intensive ventilation */
+  @poll(5)
   @ext(0xca, 0xd)
   model IntensiveVentilation is Register<onoff>;
 
   /** Outside air temperature */
+  @poll(3)
   @ext(0xc, 0xe)
   model OutsideAirTemp is ReadonlyUpdateRegister<tempsensor>;
 
   /** Exit air temperature */
+  @poll(3)
   @ext(0xd, 0xe)
   model ExitAirTemp is ReadonlyUpdateRegister<tempsensor>;
 
   /** Exhaust air temperature */
+  @poll(3)
   @ext(0xb4, 0xd)
   model ExhaustAirTemp is ReadonlyUpdateRegister<tempsensor>;
 
   /** Exhaust air humidity */
+  @poll(2)
   @ext(0x85, 0x3)
   model ExhaustAirHumidity is ReadonlyUpdateRegister<percent>;
 
   /** Supply air temperature */
+  @poll(3)
   @ext(0xb3, 0xd)
   model SupplyAirTemp is ReadonlyUpdateRegister<tempsensor>;
 
   /** Bypass flap position */
-  @poll(9)
+  @poll(5)
   @ext(0xb, 0xe)
   model BypassPosition is ReadonlyUpdateRegister<percent>;
 
