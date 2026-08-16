@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "utilities for converting ebusd-configuration files",
   "scripts": {
-    "maintsp": "find src/ -name '*.tsp' -not -type l|grep -Ev 'main.tsp|_templates.tsp'|sort|grep -v '_inc.'|sed -e 's#src/##' -e 's#^#import \"./#' -e 's#$#\";#' > src/main.tsp",
+    "maintsp": "find src/ -name '*.tsp' |grep -Ev 'main.tsp|_templates.tsp'|sort|grep -v '_inc.'|sed -e 's#src/##' -e 's#^#import \"./#' -e 's#$#\";#' > src/main.tsp",
     "format": "npx tsp format src/*.tsp src/**/*.tsp",
     "lint": "npx tsp compile src/main.tsp --import @typespec/library-linter --emit @ebusd/ebus-typespec --no-emit",
     "compile-en": "npx tsp compile --emit @ebusd/ebus-typespec src/main.tsp --output-dir outcsv",
