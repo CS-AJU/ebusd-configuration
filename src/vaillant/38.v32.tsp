@@ -7,7 +7,7 @@ using Ebus.Str;
 namespace Vaillant;
 
 // @zz(0x08)
-namespace Recov {
+namespace V32 {
   // ,recov,recoVair 260
 
   /** Ventilation level day: 1-6 */
