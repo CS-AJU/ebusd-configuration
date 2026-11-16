@@ -36,6 +36,7 @@ namespace V32 {
 
   /** Days left until filter change */
   @inherit(r, w)
+  @poll(9)
   @ext(0x35, 0xe)
   model FilterChangeDaysLeft {
     @unit("days")

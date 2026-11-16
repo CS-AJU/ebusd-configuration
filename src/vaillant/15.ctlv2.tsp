@@ -774,6 +774,7 @@ namespace _720 {
 
   /** Dew point monitoring heating circuit 1 */
   @inherit(r_3, w_3)
+  @poll(8)
   @ext(0x5, 0)
   @condition(_720.Hc1CircuitType.value, "1")
   @condition(_720.Hc1CoolingEnabled.value, "1")
@@ -813,6 +814,7 @@ namespace _720 {
 
   /** Dew point offset heating circuit 1 */
   @inherit(r_3, w_3)
+  @poll(8)
   @ext(0xa, 0)
   @condition(_720.Hc1CircuitType.value, "1")
   @condition(_720.Hc1CoolingEnabled.value, "1")
@@ -885,6 +887,7 @@ namespace _720 {
 
   /** Cooling flow min temperature heating circuit 1 */
   @inherit(r_3, w_3)
+  @poll(8)
   @ext(0x11, 0)
   @condition(_720.Hc1CircuitType.value, "1")
   @condition(_720.Hc1CoolingEnabled.value, "1")
@@ -916,6 +919,7 @@ namespace _720 {
 
   /** Summer outside switchoff temperature heating circuit 1 */
   @inherit(r_3, w_3)
+  @poll(8)
   @ext(0x14, 0)
   model Hc1SummerTempLimit {
     @minValue(10)

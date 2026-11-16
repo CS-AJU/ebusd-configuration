@@ -169,6 +169,7 @@ namespace Hmu {
 
   /** current yielded energy from the environment */
   @inherit(r_2)
+  @poll(4)
   @ext(0x23)
   model CurrentYieldPower {
     @unit("kW")
@@ -188,6 +189,7 @@ namespace Hmu {
 
   /** current compressor utilization */
   @inherit(r_2)
+  @poll(4)
   @ext(0x25)
   @Ebus.example("22%", "3108b51a0405ff3225", "0aff083867010000000000")
   model CurrentCompressorUtil {
@@ -222,6 +224,7 @@ namespace Hmu {
   }
 
   @inherit(r_2)
+  @poll(4)
   @ext(0x3c)
   model BuildingCircuitFlow {
     @unit("l/h")
@@ -1500,6 +1503,7 @@ namespace Hmu {
   }
 
   @inherit(r_7)
+  @poll(4)
   @ext(0xfc, 0x8)
   model RunDataFlowTemp {
     /** current flow temp, accurate to 2 decimal places */
@@ -1507,6 +1511,7 @@ namespace Hmu {
   }
 
   @inherit(r_7)
+  @poll(4)
   @ext(0x6, 0x9)
   model RunDataReturnTemp {
     /** current return temp, accurate to 2 decimal places */

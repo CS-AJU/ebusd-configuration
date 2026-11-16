@@ -127,6 +127,7 @@ namespace B516_inc {
   }
 
   @inherit(r)
+  @poll(1)
   @ext(0x03, 0, 0, 0)
   model StatElectricEnergySum {
     value: energye;
