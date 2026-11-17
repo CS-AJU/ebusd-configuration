@@ -335,6 +335,7 @@ namespace _720 {
 
   /** cooling outside temperature threshold */
   @inherit(ri_1, wi_1)
+  @poll(8)
   @ext(0x38, 0)
   model CoolingOutsideTempThreshold {
     @minValue(10)
